@@ -1,2 +1,5 @@
 # sidebar-template
-website template with sticky sidebar
+
+Website template with sticky sidebar. HTML/SCSS.
+
+For use as a design sandbox.
