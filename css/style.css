@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Karla", sans-serif;
+}
+
+body {
+  overflow: hidden;
+}
+
+.grid-2-col {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 0.12fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.grid-2-col nav {
+  display: grid;
+  grid-area: 1/1/auto/auto;
+  border: 1px solid black;
+  align-items: center;
+  justify-items: center;
+}
+.grid-2-col nav ul {
+  list-style: none;
+  line-height: 8vh;
+  font-size: 2vh;
+}
+.grid-2-col nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: black;
+}
+.grid-2-col nav ul li a.current {
+  background: steelblue;
+}
+.grid-2-col main {
+  overflow-y: scroll;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  border: 1px solid black;
+  margin-bottom: 4rem;
+  font-weight: 900;
+  font-size: 2rem;
+  text-align: center;
+  margin: 2rem 3rem 3rem 3rem;
+}
+
+.section-1 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  height: auto;
+  padding: 3rem;
+  margin: 3rem;
+  border: 1px solid black;
+}
+.section-1 * {
+  padding: 1rem;
+  margin: 0.5rem;
+}
+.section-1 .div1 {
+  grid-area: 1/2/2/3;
+  border: 1px solid black;
+}
+.section-1 .div2 {
+  grid-area: 2/2/3/3;
+  border: 1px solid black;
+}
+.section-1 .div3 {
+  grid-area: 2/3/3/4;
+  border: 1px solid black;
+}
+.section-1 .div4 {
+  grid-area: 3/3/4/4;
+  border: 1px solid black;
+}
+.section-1 .div5 {
+  grid-area: 3/4/4/5;
+  border: 1px solid black;
+}
+.section-1 .div6 {
+  grid-area: 4/4/5/5;
+  border: 1px solid black;
+}
+
+.section-2 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  height: auto;
+  padding: 3rem;
+  margin: 3rem;
+  border: 1px solid black;
+}
+
+.section-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 2rem;
+  grid-row-gap: 1rem;
+  align-items: center;
+  justify-items: center;
+  height: auto;
+  padding: 3rem;
+  margin: 3rem;
+  border: 1px solid black;
+}
+
+footer {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  border: 1px solid black;
+  padding: 3rem;
+  margin: 3rem;
+}
+
+/*# sourceMappingURL=style.css.map */
