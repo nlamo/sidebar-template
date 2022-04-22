@@ -4,6 +4,13 @@
 /*****************/
 /** VUE CLASSES **/
 /*****************/
+.backgroundLightBlue {
+  background-color: #f0f8ff;
+}
+.backgroundLightBlue header, .backgroundLightBlue section, .backgroundLightBlue footer {
+  background-color: #fff;
+}
+
 .backgroundBlue {
   background-color: #192B3C;
 }

@@ -22,7 +22,7 @@
 
          <!-- Navigation bar -->
          <nav
-            v-bind:class="{ navDark: darkModeToggle }"
+            v-bind:class="{ navDark: darkMode }"
          >
             <div class="dark-mode">
                <button
@@ -43,16 +43,18 @@
          </nav>
 
          <!-- Main content -->
-         <main v-bind:class="{ backgroundBlue: darkModeToggle }">
+         <main 
+            v-bind:class="{ backgroundLightBlue: lightMode, backgroundBlue: darkMode }"
+            >
             <header
-               v-bind:class="{ headerDark: darkModeToggle }"
+               v-bind:class="{ headerDark: darkMode }"
             >
                Design Sandbox
             </header>
 
             <section
                class="section-1"
-               v-bind:class="{ sectionDark: darkModeToggle }"
+               v-bind:class="{ sectionDark: darkMode }"
             >
                <div class="div1">First</div>
                <div class="div2">Second</div>
@@ -63,7 +65,7 @@
             </section>
             <section
                class="section-2"
-               v-bind:class="{ sectionDark: darkModeToggle }"
+               v-bind:class="{ sectionDark: darkMode }"
             >
                <p>
                   Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -95,7 +97,7 @@
             </section>
             <section
                class="section-3"
-               v-bind:class="{ sectionDark: darkModeToggle }"
+               v-bind:class="{ sectionDark: darkMode }"
             >
                <p>
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
@@ -134,7 +136,7 @@
                </p>
             </section>
             <footer
-               v-bind:class="{ sectionDark: darkModeToggle }"
+               v-bind:class="{ sectionDark: darkMode }"
             >
                Made by Nicholas LaMothe.
             </footer>

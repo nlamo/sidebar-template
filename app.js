@@ -1,7 +1,8 @@
 const app = Vue.createApp({
    data() {
       return {
-         darkModeToggle: false,
+         lightMode: true,
+         darkMode: false,
          buttonBackground: "#000",
          buttonText: "Darken",
          buttonTextColor: "#fff"
@@ -21,11 +22,13 @@ const app = Vue.createApp({
          }
       },
       toggleDarkMode() {
-         if (this.darkModeToggle == false) {
-            this.darkModeToggle = true;
+         if (this.darkMode == false) {
+            this.lightMode = false;
+            this.darkMode = true;
          } 
-         else if (this.darkModeToggle == true) {
-            this.darkModeToggle = false;
+         else if (this.darkMode == true) {
+            this.darkMode = false;
+            this.lightMode = true;
          }
       },
    },
