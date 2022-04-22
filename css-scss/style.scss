@@ -1,71 +1,8 @@
-* {
-   box-sizing: border-box;
-   margin: 0;
-   padding: 0;
-   font-family: "Karla", sans-serif;
-}
+/***************/
+/** UTILITIES **/
+/***************/
 
-// Entire body overflow is hidden, we set the scroll for the content with 'overflow-y'
-body {
-   overflow: hidden;
-}
-
-.grid-2-col {
-   display: grid;
-   height: 100vh;
-   width: 100vw;
-   grid-template-columns: 0.12fr 1fr;
-   grid-template-rows: 1fr;
-   grid-column-gap: 0px;
-   grid-row-gap: 0px;
-
-   // Nevigation bar (left column)
-   nav {
-      display: grid;
-      grid-area: 1 / 1 / auto / auto;
-      border: 1px solid black;
-      align-items: center;
-      justify-items: center;
-
-      ul {
-         list-style: none;
-         line-height: 8vh;
-         font-size: 2vh;
-
-         li {
-
-            a {
-               display: block;
-               padding: 0.5rem 1rem;
-               text-decoration: none;
-               color: black;
-
-               &.current {
-                  background: steelblue;
-               }
-            }
-         }
-      }
-   }
-
-   // Primary content (right column)
-   main {
-      overflow-y: scroll;
-   }
-}
-
-header {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 5rem;
-   border: 1px solid black;
-   margin-bottom: 4rem;
-   font-weight: 900;
-   font-size: 2rem;
-   text-align: center;
-   margin: 2rem 3rem 3rem 3rem;
-}
+// These have to be at the top of the scope because of the mixins
 
 @mixin grid-5-col-4-row {
    display: grid;
@@ -109,6 +46,147 @@ header {
    border: 1px solid black;
 }
 
+@mixin grid-3-row-1-column {
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: repeat(3, 1fr);
+   grid-column-gap: 0px;
+   grid-row-gap: 0px;
+}
+
+
+/*****************/
+/** VUE CLASSES **/
+/*****************/
+
+.backgroundBlue {
+   background-color: #192B3C;
+}
+
+.headerDark {
+   background-color: #47586b;
+   color: #fff;
+}
+
+.navDark {
+   background-color: #47586b;
+
+   ul li a {
+      background-color: #47586b;
+
+      &:link {
+         color: #fff;
+      }
+      
+      &:visited {
+         color: #fff;
+      }
+
+   }
+}
+
+.sectionDark {
+   background-color: #47586b;
+   color: #fff;
+
+   div {
+      background-color: #fff;
+      color: #000;
+   }
+}
+
+/*****************/
+/* MAIN SECTIONS */
+/*****************/
+
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: "Karla", sans-serif;
+}
+
+button {
+   cursor: pointer;
+   padding: 10px;
+   font-size: 2vh;
+   color: #fff;
+}
+
+// Entire body overflow is hidden, we set the scroll for the content with 'overflow-y'
+body {
+   overflow: hidden;
+}
+
+header {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 5rem;
+   border: 1px solid black;
+   margin-bottom: 4rem;
+   font-weight: 900;
+   font-size: 2rem;
+   text-align: center;
+   margin: 2rem 3rem 3rem 3rem;
+}
+
+// Main parent content, two columns for the whole page
+.grid-2-col {
+   display: grid;
+   height: 100vh;
+   width: 100vw;
+   grid-template-columns: 0.12fr 1fr;
+   grid-template-rows: 1fr;
+   grid-column-gap: 0px;
+   grid-row-gap: 0px;
+
+   .dark-mode {
+      margin-top: 2rem;
+   }
+   
+   // Nevigation bar (left column)
+   nav {
+      @include grid-3-row-1-column;
+
+      grid-template-rows: .1fr 1fr .1fr;
+      border: 1px solid black;
+      border-top: none;
+      border-bottom: none;
+      align-items: center;
+      justify-items: center;
+
+      ul {
+         list-style: none;
+         line-height: 8vh;
+         font-size: 2vh;
+
+         li {
+            background-color: #fff;
+
+            a {
+               display: block;
+               padding: 0.5rem 1rem;
+               text-decoration: none;
+
+               :link {
+                  color: black;
+               }
+
+               :visited {
+                  color: black;
+               }
+            }
+         }
+      }
+   }
+
+   // Primary content (right column)
+   main {
+      overflow-y: scroll;
+   }
+}
+
 .section-1 {
    @include grid-5-col-4-row;
 
@@ -120,31 +198,43 @@ header {
    .div1 {
       grid-area: 1 / 2 / 2 / 3;
       border: 1px solid black;
+      width: 6rem;
+      text-align: center;
    }
 
    .div2 {
       grid-area: 2 / 2 / 3 / 3;
       border: 1px solid black;
+      width: 6rem;
+      text-align: center;
    }
 
    .div3 {
       grid-area: 2 / 3 / 3 / 4;
       border: 1px solid black;
+      width: 6rem;
+      text-align: center;
    }
 
    .div4 {
       grid-area: 3 / 3 / 4 / 4;
       border: 1px solid black;
+      width: 6rem;
+      text-align: center;
    }
 
    .div5 {
       grid-area: 3 / 4 / 4 / 5;
       border: 1px solid black;
+      width: 6rem;
+      text-align: center;
    }
 
    .div6 {
       grid-area: 4 / 4 / 5 / 5;
       border: 1px solid black;
+      width: 6rem;
+      text-align: center;
    }
 }
 

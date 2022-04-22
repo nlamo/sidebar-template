@@ -11,92 +11,134 @@
          href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,300;0,500;0,600;0,700;0,800;1,300;1,500;1,700&display=swap"
          rel="stylesheet"
       />
+      <script src="https://unpkg.com/vue@next" defer></script>
+      <script src="app.js" defer></script>
+      <script src="http://localhost:8098"></script>
       <title>Design Sandbox</title>
    </head>
 
-   <body class="grid-2-col">
-      <nav>
-         <ul>
-            <li><a href="#">First</a></li>
-            <li><a href="#">Second</a></li>
-            <li><a href="#">Third</a></li>
-            <li><a href="#">Fourth</a></li>
-            <li><a href="#">Fifth</a></li>
-            <li><a href="#">Sixth</a></li>
-         </ul>
-      </nav>
-      <main>
-         <header>Design Sandbox</header>
+   <body>
+      <div id="main-app" class="grid-2-col">
 
-         <section class="section-1">
-            <div class="div1">First</div>
-            <div class="div2">Second</div>
-            <div class="div3">Third</div>
-            <div class="div4">Fourth</div>
-            <div class="div5">Fifth</div>
-            <div class="div6">Sixth</div>
-         </section>
-         <section class="section-2">
-            <p>
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-               nam harum enim aspernatur quo doloribus laborum alias maxime. Illo
-               vero aspernatur aperiam, perspiciatis ut deleniti! Expedita ipsum
-               incidunt debitis culpa! Similique ut modi reiciendis vitae, nemo
-               veniam incidunt iure obcaecati maiores nam voluptas, eligendi
-               perferendis fugit quidem doloribus voluptates repellendus.
-            </p>
-            <p>
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-               nam harum enim aspernatur quo doloribus laborum alias maxime. Illo
-               vero aspernatur aperiam, perspiciatis ut deleniti! Expedita ipsum
-               incidunt debitis culpa! Similique ut modi reiciendis vitae, nemo
-               veniam incidunt iure obcaecati maiores nam voluptas, eligendi
-               perferendis fugit quidem doloribus voluptates repellendus.
-            </p>
-            <p>
-               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-               nam harum enim aspernatur quo doloribus laborum alias maxime. Illo
-               vero aspernatur aperiam, perspiciatis ut deleniti! Expedita ipsum
-               incidunt debitis culpa! Similique ut modi reiciendis vitae, nemo
-               veniam incidunt iure obcaecati maiores nam voluptas, eligendi
-               perferendis fugit quidem doloribus voluptates repellendus.
-            </p>
-         </section>
-         <section class="section-3">
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at
-               harum aliquid aliquam vero quis esse, saepe ratione, earum in quasi
-               et omnis excepturi id exercitationem hic iure, quisquam soluta
-               vitae? Eos a vero laboriosam facere vitae eum delectus dolores?
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at
-               harum aliquid aliquam vero quis esse, saepe ratione, earum in quasi
-               et omnis excepturi id exercitationem hic iure, quisquam soluta
-               vitae? Eos a vero laboriosam facere vitae eum delectus dolores?
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at
-               harum aliquid aliquam vero quis esse, saepe ratione, earum in quasi
-               et omnis excepturi id exercitationem hic iure, quisquam soluta
-               vitae? Eos a vero laboriosam facere vitae eum delectus dolores?
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at
-               harum aliquid aliquam vero quis esse, saepe ratione, earum in quasi
-               et omnis excepturi id exercitationem hic iure, quisquam soluta
-               vitae? Eos a vero laboriosam facere vitae eum delectus dolores?
-            </p>
-            <p>
-               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis at
-               harum aliquid aliquam vero quis esse, saepe ratione, earum in quasi
-               et omnis excepturi id exercitationem hic iure, quisquam soluta
-               vitae? Eos a vero laboriosam facere vitae eum delectus dolores?
-            </p>
-         </section>
-         <footer>
-            Made by Nicholas LaMothe.
-         </footer>
-      </main>
+         <!-- Navigation bar -->
+         <nav
+            v-bind:class="{ navDark: darkModeToggle }"
+         >
+            <div class="dark-mode">
+               <button
+                  v-on:click="setButtonText(); toggleDarkMode();"
+                  v-bind:style="{ backgroundColor: buttonBackground, color: buttonTextColor }"
+               >
+                  {{ buttonText }}
+               </button>
+            </div>
+            <ul>
+               <li><a href="#">First</a></li>
+               <li><a href="#">Second</a></li>
+               <li><a href="#">Third</a></li>
+               <li><a href="#">Fourth</a></li>
+               <li><a href="#">Fifth</a></li>
+               <li><a href="#">Sixth</a></li>
+            </ul>
+         </nav>
+
+         <!-- Main content -->
+         <main v-bind:class="{ backgroundBlue: darkModeToggle }">
+            <header
+               v-bind:class="{ headerDark: darkModeToggle }"
+            >
+               Design Sandbox
+            </header>
+
+            <section
+               class="section-1"
+               v-bind:class="{ sectionDark: darkModeToggle }"
+            >
+               <div class="div1">First</div>
+               <div class="div2">Second</div>
+               <div class="div3">Third</div>
+               <div class="div4">Fourth</div>
+               <div class="div5">Fifth</div>
+               <div class="div6">Sixth</div>
+            </section>
+            <section
+               class="section-2"
+               v-bind:class="{ sectionDark: darkModeToggle }"
+            >
+               <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum nam harum enim aspernatur quo doloribus laborum alias
+                  maxime. Illo vero aspernatur aperiam, perspiciatis ut
+                  deleniti! Expedita ipsum incidunt debitis culpa! Similique ut
+                  modi reiciendis vitae, nemo veniam incidunt iure obcaecati
+                  maiores nam voluptas, eligendi perferendis fugit quidem
+                  doloribus voluptates repellendus.
+               </p>
+               <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum nam harum enim aspernatur quo doloribus laborum alias
+                  maxime. Illo vero aspernatur aperiam, perspiciatis ut
+                  deleniti! Expedita ipsum incidunt debitis culpa! Similique ut
+                  modi reiciendis vitae, nemo veniam incidunt iure obcaecati
+                  maiores nam voluptas, eligendi perferendis fugit quidem
+                  doloribus voluptates repellendus.
+               </p>
+               <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Nostrum nam harum enim aspernatur quo doloribus laborum alias
+                  maxime. Illo vero aspernatur aperiam, perspiciatis ut
+                  deleniti! Expedita ipsum incidunt debitis culpa! Similique ut
+                  modi reiciendis vitae, nemo veniam incidunt iure obcaecati
+                  maiores nam voluptas, eligendi perferendis fugit quidem
+                  doloribus voluptates repellendus.
+               </p>
+            </section>
+            <section
+               class="section-3"
+               v-bind:class="{ sectionDark: darkModeToggle }"
+            >
+               <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                  at harum aliquid aliquam vero quis esse, saepe ratione, earum
+                  in quasi et omnis excepturi id exercitationem hic iure,
+                  quisquam soluta vitae? Eos a vero laboriosam facere vitae eum
+                  delectus dolores?
+               </p>
+               <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                  at harum aliquid aliquam vero quis esse, saepe ratione, earum
+                  in quasi et omnis excepturi id exercitationem hic iure,
+                  quisquam soluta vitae? Eos a vero laboriosam facere vitae eum
+                  delectus dolores?
+               </p>
+               <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                  at harum aliquid aliquam vero quis esse, saepe ratione, earum
+                  in quasi et omnis excepturi id exercitationem hic iure,
+                  quisquam soluta vitae? Eos a vero laboriosam facere vitae eum
+                  delectus dolores?
+               </p>
+               <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                  at harum aliquid aliquam vero quis esse, saepe ratione, earum
+                  in quasi et omnis excepturi id exercitationem hic iure,
+                  quisquam soluta vitae? Eos a vero laboriosam facere vitae eum
+                  delectus dolores?
+               </p>
+               <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis
+                  at harum aliquid aliquam vero quis esse, saepe ratione, earum
+                  in quasi et omnis excepturi id exercitationem hic iure,
+                  quisquam soluta vitae? Eos a vero laboriosam facere vitae eum
+                  delectus dolores?
+               </p>
+            </section>
+            <footer
+               v-bind:class="{ sectionDark: darkModeToggle }"
+            >
+               Made by Nicholas LaMothe.
+            </footer>
+         </main>
+      </div>
    </body>
 </html>

@@ -1,3 +1,43 @@
+/***************/
+/** UTILITIES **/
+/***************/
+/*****************/
+/** VUE CLASSES **/
+/*****************/
+.backgroundBlue {
+  background-color: #192B3C;
+}
+
+.headerDark {
+  background-color: #47586b;
+  color: #fff;
+}
+
+.navDark {
+  background-color: #47586b;
+}
+.navDark ul li a {
+  background-color: #47586b;
+}
+.navDark ul li a:link {
+  color: #fff;
+}
+.navDark ul li a:visited {
+  color: #fff;
+}
+
+.sectionDark {
+  background-color: #47586b;
+  color: #fff;
+}
+.sectionDark div {
+  background-color: #fff;
+  color: #000;
+}
+
+/*****************/
+/* MAIN SECTIONS */
+/*****************/
 * {
   box-sizing: border-box;
   margin: 0;
@@ -5,42 +45,15 @@
   font-family: "Karla", sans-serif;
 }
 
-body {
-  overflow: hidden;
+button {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 2vh;
+  color: #fff;
 }
 
-.grid-2-col {
-  display: grid;
-  height: 100vh;
-  width: 100vw;
-  grid-template-columns: 0.12fr 1fr;
-  grid-template-rows: 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-}
-.grid-2-col nav {
-  display: grid;
-  grid-area: 1/1/auto/auto;
-  border: 1px solid black;
-  align-items: center;
-  justify-items: center;
-}
-.grid-2-col nav ul {
-  list-style: none;
-  line-height: 8vh;
-  font-size: 2vh;
-}
-.grid-2-col nav ul li a {
-  display: block;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  color: black;
-}
-.grid-2-col nav ul li a.current {
-  background: steelblue;
-}
-.grid-2-col main {
-  overflow-y: scroll;
+body {
+  overflow: hidden;
 }
 
 header {
@@ -54,6 +67,54 @@ header {
   font-size: 2rem;
   text-align: center;
   margin: 2rem 3rem 3rem 3rem;
+}
+
+.grid-2-col {
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 0.12fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+.grid-2-col .dark-mode {
+  margin-top: 2rem;
+}
+.grid-2-col nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  grid-template-rows: 0.1fr 1fr 0.1fr;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
+  align-items: center;
+  justify-items: center;
+}
+.grid-2-col nav ul {
+  list-style: none;
+  line-height: 8vh;
+  font-size: 2vh;
+}
+.grid-2-col nav ul li {
+  background-color: #fff;
+}
+.grid-2-col nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+}
+.grid-2-col nav ul li a :link {
+  color: black;
+}
+.grid-2-col nav ul li a :visited {
+  color: black;
+}
+.grid-2-col main {
+  overflow-y: scroll;
 }
 
 .section-1 {
@@ -76,26 +137,38 @@ header {
 .section-1 .div1 {
   grid-area: 1/2/2/3;
   border: 1px solid black;
+  width: 6rem;
+  text-align: center;
 }
 .section-1 .div2 {
   grid-area: 2/2/3/3;
   border: 1px solid black;
+  width: 6rem;
+  text-align: center;
 }
 .section-1 .div3 {
   grid-area: 2/3/3/4;
   border: 1px solid black;
+  width: 6rem;
+  text-align: center;
 }
 .section-1 .div4 {
   grid-area: 3/3/4/4;
   border: 1px solid black;
+  width: 6rem;
+  text-align: center;
 }
 .section-1 .div5 {
   grid-area: 3/4/4/5;
   border: 1px solid black;
+  width: 6rem;
+  text-align: center;
 }
 .section-1 .div6 {
   grid-area: 4/4/5/5;
   border: 1px solid black;
+  width: 6rem;
+  text-align: center;
 }
 
 .section-2 {
