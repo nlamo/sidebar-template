@@ -77,6 +77,23 @@
    color: #fff;
 }
 
+.navLight {
+   background-color: #fff;
+
+   ul li a {
+      background-color: #fff;
+
+      &:link {
+         color: #000;
+      }
+      
+      &:visited {
+         color: #000;
+      }
+
+   }
+}
+
 .navDark {
    background-color: #47586b;
 

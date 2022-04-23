@@ -20,6 +20,19 @@
   color: #fff;
 }
 
+.navLight {
+  background-color: #fff;
+}
+.navLight ul li a {
+  background-color: #fff;
+}
+.navLight ul li a:link {
+  color: #000;
+}
+.navLight ul li a:visited {
+  color: #000;
+}
+
 .navDark {
   background-color: #47586b;
 }
